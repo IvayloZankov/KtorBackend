@@ -1,1 +1,1 @@
-web: .build/install/DemoServer/bin/DemoServer
+web: build/install/DemoServer/bin/DemoServer
