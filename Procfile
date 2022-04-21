@@ -1,0 +1,1 @@
+web: build/install/com.fosents.demoserver/bin/com.fosents.demoserver
