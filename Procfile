@@ -1,1 +1,1 @@
-web: build/install/com.fosents.demoserver/bin/com.fosents.demoserver
+web: build/install/demoserver/bin/DemoServer
