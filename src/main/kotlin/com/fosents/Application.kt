@@ -3,9 +3,7 @@ package com.fosents
 import io.ktor.server.application.*
 import io.ktor.server.html.*
 import io.ktor.server.routing.*
-import kotlinx.html.body
-import kotlinx.html.head
-import kotlinx.html.title
+import kotlinx.html.*
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -20,7 +18,18 @@ fun Application.module() {
                     }
                 }
                 body {
-                    +"Hi There! Welcome to my site. Its under construction."
+                    style {
+                        +"text-align: center; font-family: sans-serif"
+                    }
+                    h1 {
+                        +"Hi There!"
+                    }
+                    p {
+                        +"Welcome to my site."
+                    }
+                    p {
+                        +" Its under construction."
+                    }
                 }
             }
         }
