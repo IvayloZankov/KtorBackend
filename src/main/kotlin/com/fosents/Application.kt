@@ -25,15 +25,16 @@ fun Application.module() {
                     }
                 }
                 body {
-                    style = "text-align: center; font-family: sans-serif"
+                    style = "background-color: #ECECEC; text-align: center; font-family: sans-serif; color:grey; font-size:150%"
                     img {
-                        src = "in_dev.png"
+                        src = "development.png"
                     }
                     h1 {
+                        style = "font-family: courier new; color:orange;"
                         +"Under development."
-
                     }
                     p {
+                        style = "color:grey;"
                         +"Hi there. Welcome to my site. It's still under development."
                     }
                 }
