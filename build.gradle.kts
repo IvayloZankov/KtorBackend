@@ -1,3 +1,5 @@
+val kotlinCssVersion: String by project
+
 plugins {
     application
     kotlin("jvm") version "1.6.20"
@@ -24,4 +26,5 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:2.0.0")
     implementation("io.ktor:ktor-server-html-builder:2.0.0")
     implementation("ch.qos.logback:logback-classic:1.2.11")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.331-kotlin-1.6.20")
 }
