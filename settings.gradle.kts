@@ -1,2 +1,2 @@
-rootProject.name = "DemoServer"
+rootProject.name = "KtorProject"
 
