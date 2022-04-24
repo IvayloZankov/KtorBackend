@@ -28,3 +28,16 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.2.11")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.331-kotlin-1.6.20")
 }
+
+tasks.create("fatJar", Jar::class) {
+    group = "build"
+    description = "Creates a self-contained fat JAR of the application that can be run."
+    manifest.attributes["Main-Class"] = "io.ktor.server.netty.EngineMain"
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    val dependencies = configurations
+        .runtimeClasspath
+        .get()
+        .map(::zipTree)
+    from(dependencies)
+    with(tasks.jar.get())
+}
