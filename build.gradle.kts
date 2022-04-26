@@ -1,4 +1,5 @@
-val kotlinCssVersion: String by project
+val kotlin_css_version: String by project
+val ktor_version: String by project
 
 plugins {
     application
@@ -22,11 +23,12 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("io.ktor:ktor-server-core:2.0.0")
-    implementation("io.ktor:ktor-server-netty:2.0.0")
-    implementation("io.ktor:ktor-server-html-builder:2.0.0")
+    implementation("io.ktor:ktor-server-core:$ktor_version")
+    implementation("io.ktor:ktor-server-netty:$ktor_version")
+    implementation("io.ktor:ktor-server-html-builder:$ktor_version")
     implementation("ch.qos.logback:logback-classic:1.2.11")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.331-kotlin-1.6.20")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:$kotlin_css_version")
+    implementation("io.ktor:ktor-server-status-pages-jvm:$ktor_version")
 }
 
 tasks.create("fatJar", Jar::class) {
