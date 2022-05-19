@@ -1,9 +1,12 @@
-val kotlin_css_version: String by project
-val ktor_version: String by project
+val kotlinCssVersion: String by project
+val ktorVersion: String by project
+val logbackVersion: String by project
+val koinVersion: String by project
 
 plugins {
     application
     kotlin("jvm") version "1.6.20"
+    kotlin("plugin.serialization") version "1.6.20"
 }
 
 group = "com.fosents"
@@ -23,12 +26,14 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("io.ktor:ktor-server-core:$ktor_version")
-    implementation("io.ktor:ktor-server-netty:$ktor_version")
-    implementation("io.ktor:ktor-server-html-builder:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:1.2.11")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:$kotlin_css_version")
-    implementation("io.ktor:ktor-server-status-pages-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-core:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
+    implementation("io.ktor:ktor-server-html-builder:$ktorVersion")
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:$kotlinCssVersion")
+    implementation("io.ktor:ktor-server-status-pages-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktorVersion")
 }
 
 tasks.create("fatJar", Jar::class) {
