@@ -191,14 +191,16 @@ private fun BODY.setProjectsSection() {
             div("inner") {
                 div("row") {
                     div("column left img") {
-                        img(classes = "wheelBig") {
-                            src = "wheel.svg"
-                        }
-                        img(classes = "wheelMedium") {
-                            src = "wheel.svg"
-                        }
-                        img(classes = "wheelSmall") {
-                            src = "wheel.svg"
+                        div("projectsFrame") {
+                            img(classes = "wheelBig") {
+                                src = "wheel.svg"
+                            }
+                            img(classes = "wheelMedium") {
+                                src = "wheel.svg"
+                            }
+                            img(classes = "wheelSmall") {
+                                src = "wheel.svg"
+                            }
                         }
                     }
                     div("column left text") {
