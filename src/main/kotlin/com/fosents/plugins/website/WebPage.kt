@@ -191,7 +191,13 @@ private fun BODY.setProjectsSection() {
             div("inner") {
                 div("row") {
                     div("column left img") {
-                        img(classes = "title animWheel") {
+                        img(classes = "wheelBig") {
+                            src = "wheel.svg"
+                        }
+                        img(classes = "wheelMedium") {
+                            src = "wheel.svg"
+                        }
+                        img(classes = "wheelSmall") {
                             src = "wheel.svg"
                         }
                     }

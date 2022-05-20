@@ -344,7 +344,28 @@ private fun CssBuilder.setProjectsStyle() {
         margin(horizontal = 50.px)
         marginBottom = 100.px
     }
-    rule("img.animWheel") {
+    rule("img.wheelBig") {
+        height = 100.px
+        width = 100.px
+        position = Position.absolute
+        top = 25.px
+        left = 25.px
+        animation("animWheel", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
+    }
+    rule("img.wheelMedium") {
+        height = 60.px
+        width = 60.px
+        position = Position.absolute
+        bottom = 50.px
+        right = 25.px
+        animation("animWheelReverse", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
+    }
+    rule("img.wheelSmall") {
+        height = 30.px
+        width = 30.px
+        position = Position.absolute
+        bottom = 25.px
+        right = 65.px
         animation("animWheel", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("p.project") {

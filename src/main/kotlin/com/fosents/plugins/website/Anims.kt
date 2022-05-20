@@ -7,10 +7,10 @@ import kotlinx.css.properties.*
 fun CssBuilder.setAnimations() {
     setBikeAnim()
     setRobotAnim()
-    setWheelAnim()
+    setWheelsAnim()
 }
 
-private fun CssBuilder.setWheelAnim() {
+private fun CssBuilder.setWheelsAnim() {
     rule("@keyframes animWheel") {
         rule("from") {
             transform {
@@ -20,6 +20,18 @@ private fun CssBuilder.setWheelAnim() {
         rule("to") {
             transform {
                 rotate(359.deg)
+            }
+        }
+    }
+    rule("@keyframes animWheelReverse") {
+        rule("from") {
+            transform {
+                rotate(0.deg)
+            }
+        }
+        rule("to") {
+            transform {
+                rotate((-359).deg)
             }
         }
     }
