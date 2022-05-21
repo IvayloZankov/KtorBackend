@@ -157,6 +157,8 @@ private fun CssBuilder.setMainStyle() {
         height = 200.px
         width = 200.px
         position = Position.relative
+        padding(all = 0.px)
+//        border = "1px solid red"
     }
     rule("div.column.left.text") {
         height = 200.px
@@ -344,28 +346,39 @@ private fun CssBuilder.setProjectsStyle() {
         margin(horizontal = 50.px)
         marginBottom = 100.px
     }
+    rule("div.projectsFrame") {
+        height = 150.px
+        width = 150.px
+        position = Position.absolute
+        top = 0.px
+        bottom = 0.px
+        left = 0.px
+        right = 0.px
+        margin = "auto"
+//        border = "1px solid blue"
+    }
     rule("img.wheelBig") {
         height = 100.px
         width = 100.px
         position = Position.absolute
-        top = 25.px
-        left = 25.px
+        top = 0.px
+        left = 0.px
         animation("animWheel", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("img.wheelMedium") {
         height = 60.px
         width = 60.px
         position = Position.absolute
-        bottom = 50.px
-        right = 25.px
+        bottom = 25.px
+        right = 0.px
         animation("animWheelReverse", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("img.wheelSmall") {
         height = 30.px
         width = 30.px
         position = Position.absolute
-        bottom = 25.px
-        right = 65.px
+        bottom = 0.px
+        right = 40.px
         animation("animWheel", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("p.project") {
@@ -490,7 +503,7 @@ private fun CssBuilder.setMedia() {
         }
         rule("div.column.left.img") {
             width = LinearDimension("100%")
-            right = 0.px
+//            right = 0.px
         }
         rule("div.column.left.text") {
             height = 100.px
