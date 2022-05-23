@@ -1,5 +1,6 @@
 val kotlinCssVersion: String by project
 val ktorVersion: String by project
+val kotlinVersion: String by project
 val logbackVersion: String by project
 val koinVersion: String by project
 
@@ -34,6 +35,9 @@ dependencies {
     implementation("org.jetbrains.kotlin-wrappers:kotlin-css:$kotlinCssVersion")
     implementation("io.ktor:ktor-server-status-pages-jvm:$ktorVersion")
     implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktorVersion")
+
+    testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
 }
 
 tasks.create("fatJar", Jar::class) {
