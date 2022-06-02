@@ -17,7 +17,6 @@ fun Route.products() {
     }
     post(VENDING_URL_DECREASE_PRODUCT) {
         val id = call.receiveParameters()["id"].toString()
-//        val id = call.request.queryParameters["id"]
         call.respond(
             message = VendingRepo.decreaseProductQuantity(id),
             status = HttpStatusCode.OK
