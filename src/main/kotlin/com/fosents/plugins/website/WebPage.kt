@@ -215,13 +215,13 @@ private fun BODY.setProjectsSection() {
                 project(
                     "vending",
                     "Kotlin VM",
-                    "Android Kotlin vending machine implementation on Jetpack Compose, Kotlin Coroutines, " +
+                    "Android vending machine implementation on Kotlin with Jetpack Compose, Coroutines, " +
                             "Retrofit, Room, DataStore.",
                     URL_PROJECT_VENDING_KOTLIN)
                 project(
                     "vending",
                     "Java VM",
-                    "Android Java vending machine implementation with MVVM, Retrofit, RxJava.",
+                    "Android vending machine implementation on Java with MVVM, LiveData, Retrofit, RxJava.",
                     URL_PROJECT_VENDING_JAVA)
                 project(
                     "coding",

@@ -481,15 +481,6 @@ private fun CssBuilder.setFooterStyle() {
 
 private fun CssBuilder.setMedia() {
     media("(max-width: 1080px)") {
-        rule("a.menu") {
-            not(":first-child") {
-                display = Display.none
-            }
-        }
-        rule("ul.menu.icon") {
-            float = Float.right
-            display = Display.block
-        }
         rule("div.column") {
             width = LinearDimension("100%")
         }
