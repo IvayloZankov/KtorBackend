@@ -400,23 +400,21 @@ private fun CssBuilder.setProjectsStyle() {
     }
     rule("a.project:hover") {
         fontWeight = FontWeight.bold
-        color = Color.gold
+        filter = FILTER_WHITE_TO_GOLD
     }
     rule("a.project.vending") {
         background="url('vending.svg')"
         backgroundRepeat = BackgroundRepeat.noRepeat
     }
     rule("a.project.vending:hover") {
-        background="url('vending_hover.svg')"
-        backgroundRepeat = BackgroundRepeat.noRepeat
+        filter = FILTER_WHITE_TO_GOLD
     }
     rule("a.project.coding") {
         background="url('coding.svg')"
         backgroundRepeat = BackgroundRepeat.noRepeat
     }
     rule("a.project.coding:hover") {
-        background="url('coding_hover.svg')"
-        backgroundRepeat = BackgroundRepeat.noRepeat
+        filter = FILTER_WHITE_TO_GOLD
     }
 }
 

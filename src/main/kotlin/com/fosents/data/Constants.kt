@@ -22,3 +22,4 @@ val COLOR_HOVER = Color("#006969")
 val COLOR_BACKGROUND = Color("#e6e6e6")
 val COLOR_BACKGROUND_ACCENT = COLOR_ACCENT
 val COLOR_BACKGROUND_ACCENT_SEC = Color.dimGray
+const val FILTER_WHITE_TO_GOLD = "sepia() saturate(10000%) hue-rotate(330deg)"
