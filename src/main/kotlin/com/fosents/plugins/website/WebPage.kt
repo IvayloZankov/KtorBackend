@@ -108,10 +108,12 @@ private fun DIV.setSkills() {
         div("column left skills") {
             addSkill("Java", 5)
             addSkill("Kotlin", 4)
+            addSkill("Coroutines", 4)
+            addSkill("Hilt-Dagger", 4)
             addSkill("Android", 5)
-            addSkill("Ktor", 3)
         }
         div("column left skills") {
+            addSkill("Ktor", 3)
             addSkill("MVVM", 5)
             addSkill("RxJava", 4)
             addSkill("Retrofit", 4)
@@ -142,6 +144,9 @@ private fun DIV.setCertificates() {
     }
     div ("inner certs") {
         ul {
+            cert(
+                "Build Modern Android App with Ktor Server",
+                "Udemy")
             cert(
                 "Functional Programming with Java",
                 "LinkedIn Learning")
@@ -215,8 +220,8 @@ private fun BODY.setProjectsSection() {
                 project(
                     "vending",
                     "Kotlin VM",
-                    "Android vending machine implementation on Kotlin with Jetpack Compose, Coroutines, " +
-                            "Retrofit, Room, DataStore.",
+                    "Android vending machine implementation on Kotlin with Jetpack Compose, Hilt-Dagger, " +
+                            "Coroutines, Retrofit, Room, DataStore.",
                     URL_PROJECT_VENDING_KOTLIN)
                 project(
                     "vending",

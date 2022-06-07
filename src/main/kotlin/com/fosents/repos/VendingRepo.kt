@@ -20,12 +20,21 @@ object VendingRepo: IVendingRepo {
     override suspend fun decreaseProductQuantity(id: String?): ApiResponse<Product> {
         return try {
             val intId = id?.toInt()
-            products[intId!!].quantity--
-            ApiResponse(
-                success = true,
-                message = "ok",
-                data = products
-            )
+            val product = products[intId!!]
+            if (product.quantity > 0) {
+                product.quantity--
+                ApiResponse(
+                    success = true,
+                    message = "ok",
+                    data = products
+                )
+            } else {
+                ApiResponse(
+                    success = false,
+                    message = "Product out of quantity",
+                    data = emptyList()
+                )
+            }
         } catch (e: NullPointerException) {
             ApiResponse(
                 success = false,
