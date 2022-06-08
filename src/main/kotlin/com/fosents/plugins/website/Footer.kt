@@ -21,6 +21,7 @@ fun HTML.setFooter() {
                         ul("footer") {
                             setLink("Linkedin", "https://www.linkedin.com/in/ivaylozankov/")
                             setLink("GitHub", "https://github.com/IvayloZankov")
+                            setLink("CodeWars", "https://www.codewars.com/users/Fosents")
                             setLink("Facebook", "https://www.facebook.com/zankov")
                         }
                     }
