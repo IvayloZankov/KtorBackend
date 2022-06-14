@@ -33,6 +33,16 @@ fun HTML.setHead() {
         title {
             +"Ivaylo Zankov"
         }
-
+        script(type = "javascript", src = "https://www.googletagmanager.com/gtag/js?id=G-DFT1RQD413") {
+            async = true
+        }
+        script {
+          unsafe {
+              raw("window.dataLayer = window.dataLayer || [];\n" +
+                  "  function gtag(){dataLayer.push(arguments);}\n" +
+                  "  gtag('js', new Date());\n" +
+                  "\n" +
+                  "  gtag('config', 'G-DFT1RQD413');") }
+        }
     }
 }
