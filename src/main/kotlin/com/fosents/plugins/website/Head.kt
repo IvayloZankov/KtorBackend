@@ -33,16 +33,14 @@ fun HTML.setHead() {
         title {
             +"Ivaylo Zankov"
         }
-        unsafe {
-            raw("<!-- Global site tag (gtag.js) - Google Analytics -->\n" +
-                    "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-DFT1RQD413\"></script>\n" +
-                    "<script>\n" +
-                    "  window.dataLayer = window.dataLayer || [];\n" +
-                    "  function gtag(){dataLayer.push(arguments);}\n" +
-                    "  gtag('js', new Date());\n" +
-                    "\n" +
-                    "  gtag('config', 'G-DFT1RQD413');\n" +
-                    "</script>\n")
+        script{
+            unsafe {
+                raw("(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n" +
+                        "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n" +
+                        "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n" +
+                        "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n" +
+                        "})(window,document,'script','dataLayer','GTM-NBGBD8J');")
+            }
         }
     }
 }

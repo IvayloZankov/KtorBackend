@@ -14,6 +14,14 @@ fun HTML.initLandingPage() {
 
 private fun HTML.setBody() {
     body {
+        noScript {
+            iframe {
+                src = "https://www.googletagmanager.com/ns.html?id=GTM-NBGBD8J"
+                height = "0"
+                width = "0"
+                style = "display:none;visibility:hidden"
+            }
+        }
         setIntro()
         setInfoSection()
         setAboutMeSection()
