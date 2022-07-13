@@ -483,6 +483,9 @@ private fun CssBuilder.setFooterStyle() {
         textDecoration = TextDecoration.none
         listStyleType = ListStyleType.none
     }
+    rule("a.footer:hover") {
+        textDecoration = TextDecoration(setOf(TextDecorationLine.underline))
+    }
 }
 
 private fun CssBuilder.setMedia() {
