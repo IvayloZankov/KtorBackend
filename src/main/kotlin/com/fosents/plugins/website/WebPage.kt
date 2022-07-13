@@ -1,8 +1,6 @@
 package com.fosents.plugins.website
 
-import com.fosents.data.URL_PROJECT_KTOR
-import com.fosents.data.URL_PROJECT_VENDING_JAVA
-import com.fosents.data.URL_PROJECT_VENDING_KOTLIN
+import com.fosents.data.*
 import kotlinx.html.*
 
 fun HTML.initLandingPage() {
@@ -116,13 +114,13 @@ private fun DIV.setSkills() {
         div("column left skills") {
             addSkill("Java", 5)
             addSkill("Kotlin", 4)
-            addSkill("Coroutines", 4)
-            addSkill("Hilt-Dagger", 4)
+            addSkill("Coroutines", 3)
+            addSkill("Hilt-Dagger", 3)
             addSkill("Android", 5)
         }
         div("column left skills") {
             addSkill("Ktor", 3)
-            addSkill("MVVM", 5)
+            addSkill("MVVM", 4)
             addSkill("RxJava", 4)
             addSkill("Retrofit", 4)
             addSkill("Git", 4)
@@ -226,8 +224,13 @@ private fun BODY.setProjectsSection() {
             }
             ul {
                 project(
+                    "weather",
+                    "ZaniWeather",
+                    "Java weather application with Hilt-Dagger, RxJava, Retrofit, MVVM, DataStore.",
+                    URL_PROJECT_WEATHER)
+                project(
                     "vending",
-                    "Kotlin VM",
+                    "Compose VM",
                     "Android vending machine implementation on Kotlin with Jetpack Compose, Hilt-Dagger, " +
                             "Coroutines, Retrofit, Room, DataStore.",
                     URL_PROJECT_VENDING_KOTLIN)

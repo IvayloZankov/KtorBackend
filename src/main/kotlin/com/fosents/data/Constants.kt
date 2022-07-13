@@ -12,6 +12,7 @@ const val VENDING_URL_GET_COINS = "getCoins"
 const val VENDING_URL_UPDATE_COINS = "updateCoins"
 const val VENDING_URL_RESET_COINS = "resetCoins"
 
+const val URL_PROJECT_WEATHER = "https://github.com/IvayloZankov/ZaniWeather"
 const val URL_PROJECT_VENDING_JAVA = "https://github.com/IvayloZankov/VendingAndroid"
 const val URL_PROJECT_VENDING_KOTLIN = "https://github.com/IvayloZankov/KotlinVendingMachine"
 const val URL_PROJECT_KTOR = "https://github.com/IvayloZankov/KtorBackend"

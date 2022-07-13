@@ -399,7 +399,13 @@ private fun CssBuilder.setProjectsStyle() {
         paddingBottom = 5.px
     }
     rule("a.project:hover") {
-        fontWeight = FontWeight.bold
+        filter = FILTER_WHITE_TO_GOLD
+    }
+    rule("a.project.weather") {
+        background="url('weather.svg')"
+        backgroundRepeat = BackgroundRepeat.noRepeat
+    }
+    rule("a.project.weather:hover") {
         filter = FILTER_WHITE_TO_GOLD
     }
     rule("a.project.vending") {
