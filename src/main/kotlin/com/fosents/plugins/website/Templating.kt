@@ -86,14 +86,43 @@ private fun CssBuilder.setMainStyle() {
     h1 {
         fontSize = 60.px
         cursor = Cursor.default
+        paddingTop = 100.px
+        color = Color.black
+        maxHeight = 999999.px
     }
     h2 {
-        fontSize = 40.px
+        fontSize = 60.px
         cursor = Cursor.default
+        color = COLOR_FONT_MAIN
+        maxHeight = 999999.px
+        alignSelf = Align.flexEnd
+        marginLeft = 20.px
+    }
+    rule("h2.accent") {
+        color = COLOR_ACCENT
+    }
+    rule("h2.gold") {
+        color = Color.gold
     }
     h3 {
+        fontSize = 40.px
+        cursor = Cursor.default
+        marginLeft = 20.px
+        marginBottom = 5.px
+        maxHeight = 999999.px
+        alignSelf = Align.flexEnd
+    }
+    rule("h3.accent") {
+        color = Color.whiteSmoke
+    }
+    h4 {
         fontSize = 30.px
         cursor = Cursor.default
+        maxHeight = 999999.px
+        alignSelf = Align.flexEnd
+    }
+    rule("h4.accent") {
+        color = Color.whiteSmoke
     }
     p {
         fontSize = 30.px
@@ -217,12 +246,6 @@ private fun CssBuilder.setMainStyle() {
         height = 75.px
         width = 75.px
     }
-    rule("h1.title") {
-        color = COLOR_FONT_MAIN
-        maxHeight = 999999.px
-        alignSelf = Align.flexEnd
-        marginLeft = 20.px
-    }
     rule("h1.accent") {
         color = Color.gold
         maxHeight = 999999.px
@@ -315,17 +338,6 @@ private fun CssBuilder.setAboutMeStyle() {
         borderRadius = LinearDimension("50%")
         backgroundColor = Color.whiteSmoke
         marginLeft = 6.px
-    }
-    rule("h2.accent") {
-        margin(all = 0.px)
-        marginBottom = 5.px
-        marginLeft = 20.px
-        color = Color.whiteSmoke
-        maxHeight = 999999.px
-        alignSelf = Align.flexEnd
-    }
-    rule("h2.certs") {
-        marginLeft = 20.px
     }
     rule("p.skills") {
         marginTop = 0.5.em
@@ -490,14 +502,19 @@ private fun CssBuilder.setFooterStyle() {
 
 private fun CssBuilder.setMedia() {
     media("(max-width: 1080px)") {
+        h1 {
+            paddingTop = 0.px
+        }
+        h2 {
+            width = LinearDimension("100%")
+            textAlign = TextAlign.center
+            alignSelf = Align.center
+        }
         rule("div.column") {
             width = LinearDimension("100%")
         }
         rule("div.column.picture") {
             maxWidth = 1080.px
-        }
-        rule("h1.intro") {
-            paddingTop = 0.px
         }
         rule("div.column.left.img") {
             width = LinearDimension("100%")
@@ -506,25 +523,6 @@ private fun CssBuilder.setMedia() {
         rule("div.column.left.text") {
             height = 100.px
             width = LinearDimension("100%")
-        }
-        rule("h1.inner") {
-            width = LinearDimension("100%")
-            textAlign = TextAlign.center
-        }
-        rule("h1.title") {
-            width = LinearDimension("100%")
-            textAlign = TextAlign.center
-            alignSelf = Align.center
-        }
-        rule("h1.accent") {
-            width = LinearDimension("100%")
-            textAlign = TextAlign.center
-            alignSelf = Align.center
-        }
-        rule("h1.hobbies") {
-            width = LinearDimension("100%")
-            textAlign = TextAlign.center
-            alignSelf = Align.center
         }
     }
 }

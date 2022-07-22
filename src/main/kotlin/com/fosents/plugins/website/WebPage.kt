@@ -34,7 +34,7 @@ private fun BODY.setIntro() {
             id = "home"
             div(classes = "column picture") {}
             div(classes = "column") {
-                h1(classes = "intro") {
+                h1 {
                     +"Hi there, I'm Ivaylo, a software developer"
                 }
                 div(classes = "button") {
@@ -54,9 +54,7 @@ private fun BODY.setInfoSection() {
         id = "info"
         div("inner scroll") { id = "about_me" }
         div("inner info") {
-            h1(classes = "inner") {
-                +"My Ktor website"
-            }
+            h2 { +"My Ktor website" }
             p {
                 text("Welcome to my website developed on Kotlin Ktor. Here you can find information " +
                         "about me, as well as the latest projects I'm developing.")
@@ -88,7 +86,7 @@ private fun DIV.setAboutMe() {
                 }
             }
             div("column left text") {
-                h1(classes = "hobbies") {
+                h2(classes = "accent") {
                     +"About me"
                 }
             }
@@ -183,7 +181,7 @@ private fun DIV.secTitle(image: String, text: String, textClass: String) {
             }
         }
         div("columnTextSmall") {
-            h2(classes = textClass) {
+            h3(classes = textClass) {
                 +text
             }
         }
@@ -192,7 +190,7 @@ private fun DIV.secTitle(image: String, text: String, textClass: String) {
 
 private fun UL.cert(name: String, issuer: String) {
     li {
-        h3 { +name }
+        h4 { +name }
         p { +issuer }
     }
 }
@@ -216,7 +214,7 @@ private fun BODY.setProjectsSection() {
                         }
                     }
                     div("column left text") {
-                        h1(classes = "accent") {
+                        h2(classes = "gold") {
                             +"My projects"
                         }
                     }
@@ -264,7 +262,7 @@ private fun DIV.setHobbies() {
                 }
             }
             div("column left text") {
-                h1(classes = "hobbies") {
+                h2(classes = "accent") {
                     +"My Hobbies"
                 }
             }

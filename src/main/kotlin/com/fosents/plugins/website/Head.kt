@@ -31,7 +31,7 @@ fun HTML.setHead() {
         link(rel = "stylesheet", href = "/styles.css", type = "text/css")
         link(rel = "icon", href = "/robot.svg")
         title {
-            +"Ivaylo Zankov"
+            +"Ivaylo Zankov - My Ktor website - Ивайло Занков"
         }
         script{
             unsafe {

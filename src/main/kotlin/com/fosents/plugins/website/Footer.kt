@@ -15,7 +15,7 @@ fun HTML.setFooter() {
                         }
                     }
                     div("column left") {
-                        h2("footer") {
+                        h4("accent") {
                             +"links"
                         }
                         ul("footer") {
