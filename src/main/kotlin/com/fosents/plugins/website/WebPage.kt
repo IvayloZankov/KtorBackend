@@ -112,7 +112,7 @@ private fun DIV.setSkills() {
         div("column left skills") {
             addSkill("Java", 5)
             addSkill("Kotlin", 4)
-            addSkill("Coroutines", 3)
+            addSkill("Coroutines", 4)
             addSkill("Hilt-Dagger", 3)
             addSkill("Android", 5)
         }
@@ -215,23 +215,23 @@ private fun BODY.setProjectsSection() {
                     }
                     div("column left text") {
                         h2(classes = "gold") {
-                            +"My projects"
+                            +"Working on"
                         }
                     }
                 }
             }
             ul {
                 project(
-                    "weather",
-                    "ZaniWeather",
-                    "Java weather application with Hilt-Dagger, RxJava, Retrofit, MVVM, DataStore.",
-                    URL_PROJECT_WEATHER)
-                project(
                     "vending",
                     "Compose VM",
                     "Android vending machine implementation on Kotlin with Jetpack Compose, Hilt-Dagger, " +
                             "Coroutines, Retrofit, Room, DataStore.",
                     URL_PROJECT_VENDING_KOTLIN)
+                project(
+                    "weather",
+                    "ZaniWeather",
+                    "Android Java weather application with Hilt-Dagger, RxJava, Retrofit, MVVM, DataStore.",
+                    URL_PROJECT_WEATHER)
                 project(
                     "vending",
                     "Java VM",
@@ -257,26 +257,28 @@ private fun DIV.setHobbies() {
     div("inner hobbies") {
         div("row") {
             div("column left img") {
-                img(classes = "title animBike") {
-                    src = "bike.svg"
+                img(classes = "title animHobby") {
+                    style = "transform-origin: center bottom"
+                    src = "tent.svg"
                 }
             }
             div("column left text") {
                 h2(classes = "accent") {
-                    +"My Hobbies"
+                    +"Outdoors"
                 }
             }
         }
         p {
-            text("I'm a mountain biker and I ride different styles as Enduro and Downhill. " +
-                    "I’ve been a biker for years and I take every opportunity to go to the " +
-                    "mountains and explore new routes. For me riding is one of the best experiences, " +
+            text("I love spending time outdoors with my family and friends. I take every opportunity to go to the " +
+                    "wilderness and explore new places. For me being outdoors is one of the best experiences " +
                     "where I get lost in nature and clear my mind.")
         }
         p {
-            text("Another hobby of mine is cooking. I am fond of it, and I am always trying " +
-                    "interesting new recipes. Sometimes I like watching a good movie and spending quality " +
-                    "time with my family and friends.")
+            text("And in a combination with another hobby of mine - cooking, it makes unforgettable moments. " +
+                    "I am fond of it, and I am always trying interesting new recipes.")
+        }
+        p {
+            text("I'm also an enduro mountain biker and I love ridding in the mountains, exploring new routes.")
         }
     }
     div("inner")

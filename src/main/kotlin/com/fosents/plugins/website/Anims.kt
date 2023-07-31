@@ -5,7 +5,7 @@ import kotlinx.css.LinearDimension
 import kotlinx.css.properties.*
 
 fun CssBuilder.setAnimations() {
-    setBikeAnim()
+    setHobbyAnim()
     setRobotAnim()
     setWheelsAnim()
 }
@@ -72,36 +72,41 @@ private fun CssBuilder.setRobotAnim() {
     }
 }
 
-private fun CssBuilder.setBikeAnim() {
-    rule("@keyframes animBike") {
+private fun CssBuilder.setHobbyAnim() {
+    rule("@keyframes animHobby") {
         rule("0%") {
             transform {
-                scale(1)
-                translateX(LinearDimension("0%"))
+                skewX(0.deg)
             }
         }
-        rule("25%") {
+        rule("20%") {
             transform {
-                scale(0.9)
-                translateX(LinearDimension("-20%"))
+                skewX((-5).deg)
+            }
+        }
+        rule("30%") {
+            transform {
+                skewX((-4).deg)
             }
         }
         rule("50%") {
             transform {
-                scale(0.8)
-                translateX(LinearDimension("0%"))
+                skewX((-9).deg)
             }
         }
-        rule("75%") {
+        rule("60%") {
             transform {
-                scale(0.9)
-                translateX(LinearDimension("20%"))
+                skewX((-2).deg)
+            }
+        }
+        rule("70%") {
+            transform {
+                skewX((-4).deg)
             }
         }
         rule("100%") {
             transform {
-                scale(1)
-                translateY(LinearDimension("0%"))
+                skewX(0.deg)
             }
         }
     }
