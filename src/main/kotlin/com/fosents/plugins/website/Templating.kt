@@ -38,8 +38,8 @@ private fun CssBuilder.setMenuStyle() {
     rule("ul.menu") {
         textAlign = TextAlign.center
         textTransform = TextTransform.lowercase
-        padding = Padding(all = 0.px)
-        margin = Margin(all = 0.px)
+        padding(all = 0.px)
+        margin(all = 0.px)
         fontSize = 0.px
         width = LinearDimension("100%")
         position = Position.fixed
@@ -58,7 +58,8 @@ private fun CssBuilder.setMenuStyle() {
         textDecoration = TextDecoration.none
         display = Display.inlineBlock
         transitionDuration = Time("0.4s")
-        padding = Padding(horizontal = 24.px, vertical = 10.px)
+        padding(horizontal = 24.px)
+        padding(vertical = 10.px)
         width = 150.px
         fontSize = 25.px
         height = 30.px
@@ -78,9 +79,9 @@ private fun CssBuilder.setMainStyle() {
         backgroundColor = Color.whiteSmoke
         color = COLOR_FONT_MAIN
         fontFamily = "courier new"
-        margin = Margin(top = 50.px)
-        margin = Margin(bottom = 0.px)
-        margin = Margin(horizontal = LinearDimension.auto)
+        marginTop = 50.px
+        marginBottom = 0.px
+        margin(horizontal = LinearDimension.auto)
     }
     h1 {
         fontSize = 60.px
@@ -130,15 +131,15 @@ private fun CssBuilder.setMainStyle() {
     }
     rule("div.main") {
         maxWidth = 1600.px
-        margin = Margin(0.px, LinearDimension.auto)
+        margin = "0px auto"
         position = Position.relative
     }
     rule("div.main.intro") {
-        padding = Padding(horizontal = 50.px)
+        padding(horizontal = 50.px)
     }
     rule("div.background") {
         backgroundColor = COLOR_BACKGROUND
-        border = Border(1.px, BorderStyle.solid)
+        border = "1px solid"
         borderColor = COLOR_BACKGROUND
     }
     rule("div.backgroundAccent") {
@@ -146,36 +147,36 @@ private fun CssBuilder.setMainStyle() {
     }
     rule("div.backgroundAccentSecondary") {
         backgroundColor = COLOR_BACKGROUND_ACCENT_SEC
-        border = Border(1.px, BorderStyle.solid)
+        border = "1px solid"
         borderColor = COLOR_BACKGROUND_ACCENT_SEC
     }
     rule("div.inner") {
-        padding = Padding(horizontal = 50.px)
+        padding(horizontal = 50.px)
         paddingTop = 50.px
         position = Position.relative
 //        border = "1px solid red"
     }
     rule("div.inner.small") {
-        padding = Padding(all = 50.px)
+        padding(all = 50.px)
     }
     rule("div.scroll") {
         height = 50.px
         width = 50.px
-        padding = Padding(all = 0.px)
-        margin = Margin(all = 0.px)
+        padding(all = 0.px)
+        margin(all = 0.px)
 //        border = "1px solid blue"
         position = Position.absolute
         bottom = 0.px
 
     }
     rule("div.innerSecondary") {
-        padding = Padding(horizontal = 50.px)
+        padding(horizontal = 50.px)
         paddingTop = 0.px
     }
     rule("div.column") {
         float = Float.right
         width = LinearDimension("50%")
-        padding = Padding(all = 50.px)
+        padding(all = 50.px)
         boxSizing = BoxSizing.borderBox
     }
     rule("div.column.left") {
@@ -185,12 +186,12 @@ private fun CssBuilder.setMainStyle() {
         height = 200.px
         width = 200.px
         position = Position.relative
-        padding = Padding(all = 0.px)
+        padding(all = 0.px)
 //        border = "1px solid red"
     }
     rule("div.column.left.text") {
         height = 200.px
-        padding = Padding(all = 0.px)
+        padding(all = 0.px)
         position = Position.relative
         display = Display.flex
     }
@@ -210,13 +211,13 @@ private fun CssBuilder.setMainStyle() {
         position = Position.relative
     }
     rule("div.columnTextSmall") {
-        padding = Padding(all = 50.px)
+        padding(all = 50.px)
         height = 100.px
         boxSizing = BoxSizing.borderBox
         float = Float.left
         position = Position.relative
 //        border = "1px solid blue"
-        padding = Padding(all = 0.px)
+        padding(all = 0.px)
         display = Display.flex
     }
     rule("div.row:after") {
@@ -236,15 +237,10 @@ private fun CssBuilder.setMainStyle() {
         bottom = 0.px
         left = 0.px
         right = 0.px
-        margin = Margin(LinearDimension.auto)
+        margin = "auto"
     }
     rule("img.animRobot") {
-        animation += Animation(
-            "animRobot",
-            Time("3s"),
-            Timing.ease,
-            iterationCount = IterationCount.infinite
-        )
+        animation("animRobot", Time("3s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("img.title.small") {
         height = 75.px
@@ -260,11 +256,11 @@ private fun CssBuilder.setMainStyle() {
 
 private fun CssBuilder.setIntroStyle() {
     rule("div.column.picture") {
-        margin = Margin(vertical = 50.px)
+        margin(vertical = 50.px)
         borderRadius = 100.px
         background="url('me.png')"
         backgroundRepeat = BackgroundRepeat.noRepeat
-        backgroundPosition = RelativePosition.center
+        backgroundPosition = "center"
         backgroundSize = "cover"
         height = 700.px
         maxWidth = 700.px
@@ -275,16 +271,16 @@ private fun CssBuilder.setIntroStyle() {
         maxHeight = 999999.px
     }
     rule("div.button") {
-        padding = Padding(vertical = 100.px)
+        padding(vertical = 100.px)
     }
     rule("a.button") {
         color = Color.whiteSmoke
-        border = Border(3.px, BorderStyle.solid)
+        border = "3px solid"
         borderColor = COLOR_ACCENT
         backgroundColor = COLOR_ACCENT
         borderRadius = 20.px
         fontSize = 32.px
-        padding = Padding(vertical =16.px, horizontal = 32.px)
+        padding = "16px 32px"
         textAlign = TextAlign.center
         transitionDuration = Time("0.4s")
         fontFamily = "sans-serif"
@@ -293,7 +289,7 @@ private fun CssBuilder.setIntroStyle() {
     }
     rule("a.button:hover") {
         color = Color.whiteSmoke
-        border = Border(3.px, BorderStyle.solid)
+        border = "3px solid"
         borderColor = COLOR_HOVER
         backgroundColor = COLOR_HOVER
     }
@@ -310,7 +306,7 @@ private fun CssBuilder.setAboutMeStyle() {
     }
     rule("div.inner.info") {
         position = Position.relative
-        padding = Padding(all = 50.px)
+        padding(all = 50.px)
     }
     rule("div.main.skills") {
         paddingBottom = 20.px
@@ -319,7 +315,7 @@ private fun CssBuilder.setAboutMeStyle() {
         paddingBottom = 50.px
     }
     rule("div.column.left.skills") {
-        padding = Padding(all = 0.px)
+        padding(all = 0.px)
         paddingLeft = 100.px
         color = Color.whiteSmoke
     }
@@ -350,16 +346,16 @@ private fun CssBuilder.setAboutMeStyle() {
     }
     rule("ul.skills") {
         marginTop = 0.px
-        border = Border(1.px, BorderStyle.solid, Color.red)
+        border = "1px solid red"
     }
 }
 
 private fun CssBuilder.setProjectsStyle() {
     rule("div.projectTitle") {
-        margin = Margin(vertical = 50.px)
+        margin(vertical = 50.px)
     }
     rule("div.project") {
-        margin = Margin(horizontal = 50.px)
+        margin(horizontal = 50.px)
         marginBottom = 100.px
     }
     rule("div.projectsFrame") {
@@ -370,7 +366,7 @@ private fun CssBuilder.setProjectsStyle() {
         bottom = 0.px
         left = 0.px
         right = 0.px
-        margin = Margin(LinearDimension.auto)
+        margin = "auto"
 //        border = "1px solid blue"
     }
     rule("img.wheelBig") {
@@ -379,12 +375,7 @@ private fun CssBuilder.setProjectsStyle() {
         position = Position.absolute
         top = 0.px
         left = 0.px
-        animation += Animation(
-            "animWheel",
-            Time("5s"),
-            Timing.ease,
-            iterationCount = IterationCount.infinite
-        )
+        animation("animWheel", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("img.wheelMedium") {
         height = 60.px
@@ -392,12 +383,7 @@ private fun CssBuilder.setProjectsStyle() {
         position = Position.absolute
         bottom = 25.px
         right = 0.px
-        animation += Animation(
-                "animWheelReverse",
-                Time("5s"),
-                Timing.ease,
-                iterationCount = IterationCount.infinite
-        )
+        animation("animWheelReverse", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("img.wheelSmall") {
         height = 30.px
@@ -405,12 +391,7 @@ private fun CssBuilder.setProjectsStyle() {
         position = Position.absolute
         bottom = 0.px
         right = 40.px
-        animation += Animation(
-            "animWheel",
-            Time("5s"),
-            Timing.ease,
-            iterationCount = IterationCount.infinite
-        )
+        animation("animWheel", Time("5s"), Timing.ease, iterationCount = IterationCount.infinite)
     }
     rule("p.project") {
         color = Color.whiteSmoke
@@ -424,7 +405,7 @@ private fun CssBuilder.setProjectsStyle() {
         fontSize = 40.px
         color = Color.whiteSmoke
         fontWeight = FontWeight.bold
-        margin = Margin(horizontal = 10.px)
+        margin(horizontal = 10.px)
         paddingLeft = 100.px
         paddingTop = 20.px
         paddingBottom = 5.px
@@ -460,12 +441,7 @@ private fun CssBuilder.setHobbiesStyle() {
         paddingBottom = 100.px
     }
     rule("img.animHobby") {
-        animation += Animation(
-            name = "animHobby",
-            duration = Time("5s"),
-            timing = Timing.linear,
-            iterationCount = IterationCount.infinite
-        )
+        animation("animHobby", Time("5s"), Timing.linear, iterationCount = IterationCount.infinite)
     }
     rule("h1.hobbies") {
         color = COLOR_ACCENT
@@ -478,7 +454,7 @@ private fun CssBuilder.setHobbiesStyle() {
 private fun CssBuilder.setFooterStyle() {
     rule("div.footer") {
         backgroundColor = COLOR_ACCENT
-        border = Border(1.px, BorderStyle.solid)
+        border = "1px solid"
         borderColor = COLOR_ACCENT
     }
     rule("div.cellContact") {
@@ -486,7 +462,7 @@ private fun CssBuilder.setFooterStyle() {
         width = LinearDimension("50%")
         boxSizing = BoxSizing.borderBox
         color = Color.whiteSmoke
-        border = Border(1.px, BorderStyle.solid, Color.red)
+        border = "1px solid red"
         display = Display.flex
     }
     rule("p.footer.copy") {
@@ -509,7 +485,7 @@ private fun CssBuilder.setFooterStyle() {
         textAlign = TextAlign.start
     }
     rule("li.footer") {
-        padding = Padding(vertical = 3.px)
+        padding(vertical = 3.px)
         listStyleType = ListStyleType.none
     }
     rule("a.footer") {
