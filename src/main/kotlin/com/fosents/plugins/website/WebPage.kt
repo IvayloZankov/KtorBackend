@@ -40,7 +40,7 @@ private fun BODY.setIntro() {
                 div(classes = "button") {
                     style = "text-align: center"
                     a(classes = "button") {
-                        href = "@contacts"
+                        href = "#contacts"
                         +"Contact me"
                     }
                 }
