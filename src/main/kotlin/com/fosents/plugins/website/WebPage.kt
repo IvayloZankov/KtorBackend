@@ -143,9 +143,7 @@ private fun DIV.setCertificates() {
     div("inner") {
         secTitle("certs.svg", "My certs", "certs")
     }
-    div("inner scroll") {
-        id = "projects"
-    }
+    div("inner scroll") { id = "projects" }
     div ("inner certs") {
         ul {
             cert(

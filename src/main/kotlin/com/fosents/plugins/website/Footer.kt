@@ -7,7 +7,7 @@ fun HTML.setFooter() {
     body {
         footer {
             div(classes = "footer") {
-                id = "footer"
+                id = "contacts"
                 div("row main") {
                     div("column left") {
                         h1(classes = "footer name") {
