@@ -40,8 +40,8 @@ private fun BODY.setIntro() {
                 div(classes = "button") {
                     style = "text-align: center"
                     a(classes = "button") {
-                        href = "mailto:ivaylo@zankov.dev"
-                        +"Email me"
+                        href = "@contacts"
+                        +"Contact me"
                     }
                 }
             }
