@@ -110,18 +110,18 @@ private fun DIV.setSkills() {
     }
     div("row skills") {
         div("column left skills") {
-            addSkill("Java", 5)
-            addSkill("Kotlin", 4)
+            addSkill("Kotlin", 5)
+            addSkill("MVVM", 5)
+            addSkill("StateFlow", 4)
             addSkill("Coroutines", 4)
-            addSkill("Hilt-Dagger", 3)
-            addSkill("Android", 5)
+            addSkill("Retrofit", 4)
         }
         div("column left skills") {
-            addSkill("Ktor", 3)
-            addSkill("MVVM", 4)
-            addSkill("RxJava", 4)
-            addSkill("Retrofit", 4)
-            addSkill("Git", 4)
+            addSkill("Java", 5)
+            addSkill("Android Studio", 5)
+            addSkill("Test Automation", 5)
+            addSkill("Appium", 4)
+            addSkill("Jetpack Compose", 3)
         }
     }
 }
@@ -146,27 +146,13 @@ private fun DIV.setCertificates() {
     div("inner scroll") { id = "projects" }
     div ("inner certs") {
         ul {
-            cert(
-                "Build Modern Android App with Ktor Server",
-                "Udemy")
-            cert(
-                "Functional Programming with Java",
-                "LinkedIn Learning")
-            cert(
-                "Building an Android App with Jetpack Libraries",
-                "LinkedIn Learning")
-            cert(
-                "Full Android 11 Masterclass",
-                "Udemy")
-            cert(
-                "Advanced Java Programming",
-                "LinkedIn Learning")
-            cert(
-                "Kotlin for Java Developers",
-                "LinkedIn Learning")
-            cert(
-                "RxJava: Design Patterns for Android Developers",
-                "LinkedIn Learning")
+            cert("Android 14 App Development From Beginner to Advanced Developer", "Udemy")
+            cert("Build Modern Android App with Ktor Server", "Udemy")
+            cert("Functional Programming with Java", "LinkedIn Learning")
+            cert("Building an Android App with Jetpack Libraries", "LinkedIn Learning")
+            cert("Advanced Java Programming", "LinkedIn Learning")
+            cert("Kotlin for Java Developers", "LinkedIn Learning")
+            cert("RxJava: Design Patterns for Android Developers", "LinkedIn Learning")
         }
     }
 }

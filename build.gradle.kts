@@ -6,12 +6,12 @@ val koinVersion: String by project
 
 plugins {
     application
-    kotlin("jvm") version "2.0.21"
-    kotlin("plugin.serialization") version "2.0.21"
+    kotlin("jvm") version "2.1.20"
+    kotlin("plugin.serialization") version "2.1.20"
 }
 
 group = "com.fosents"
-version = "1.59"
+version = "1.61"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
