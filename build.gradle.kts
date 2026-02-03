@@ -1,13 +1,7 @@
-val kotlinCssVersion: String by project
-val ktorVersion: String by project
-val kotlinVersion: String by project
-val logbackVersion: String by project
-val koinVersion: String by project
-
 plugins {
     application
-    kotlin("jvm") version "2.1.20"
-    kotlin("plugin.serialization") version "2.1.20"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 group = "com.fosents"
@@ -17,8 +11,8 @@ application {
     mainClass.set("io.ktor.server.netty.EngineMain")
 }
 
-tasks.create("stage") {
-    dependsOn("installDist")
+tasks.register("stage") {
+    dependsOn(tasks.named("installDist"))
 }
 
 repositories {
@@ -26,29 +20,33 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation("io.ktor:ktor-server-core:$ktorVersion")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-    implementation("io.ktor:ktor-server-netty:$ktorVersion")
-    implementation("io.ktor:ktor-server-html-builder:$ktorVersion")
-    implementation("ch.qos.logback:logback-classic:$logbackVersion")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:$kotlinCssVersion")
-    implementation("io.ktor:ktor-server-status-pages-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktorVersion")
+    implementation(libs.ktor.server.core)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.html.builder)
+    implementation(libs.logback.classic)
+    implementation(libs.kotlin.css)
+    implementation(libs.ktor.server.status.pages)
+    implementation(libs.ktor.server.content.negotiation)
 
-    testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
-    testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
+    testImplementation(libs.ktor.server.tests)
+    testImplementation(libs.kotlin.test)
 }
 
-tasks.create("fatJar", Jar::class) {
+val mainClassName = "io.ktor.server.netty.EngineMain"
+
+tasks.register<Jar>("fatJar") {
     group = "build"
     description = "Creates a self-contained fat JAR of the application that can be run."
-    manifest.attributes["Main-Class"] = "io.ktor.server.netty.EngineMain"
+    manifest {
+        attributes["Main-Class"] = mainClassName
+    }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    val dependencies = configurations
-        .runtimeClasspath
-        .get()
-        .map(::zipTree)
-    from(dependencies)
+
+    val runtimeClasspathTrees = configurations.runtimeClasspath
+        .map { it.map(::zipTree) }
+
+    from(runtimeClasspathTrees)
+
     with(tasks.jar.get())
 }
