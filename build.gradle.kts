@@ -11,6 +11,16 @@ application {
     mainClass.set("io.ktor.server.netty.EngineMain")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+kotlin {
+    jvmToolchain(17)
+}
+
 tasks.register("stage") {
     dependsOn(tasks.named("installDist"))
 }
