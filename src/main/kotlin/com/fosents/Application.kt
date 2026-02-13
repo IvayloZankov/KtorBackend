@@ -1,5 +1,6 @@
 package com.fosents
 
+import com.fosents.plugins.vending.configurePoisRouting
 import com.fosents.plugins.vending.configureSerialization
 import com.fosents.plugins.vending.configureVendingRouting
 import com.fosents.plugins.website.configureStatusPages
@@ -16,5 +17,6 @@ fun Application.module() {
     configureWebsiteRouting()
     configureSerialization()
     configureVendingRouting()
+    configurePoisRouting()
     configureStatusPages()
 }

@@ -2,8 +2,8 @@ package com.fosents
 
 import com.fosents.data.*
 import com.fosents.models.ApiResponse
-import com.fosents.models.Coin
-import com.fosents.models.Product
+import com.fosents.models.vending.Coin
+import com.fosents.models.vending.Product
 import com.fosents.repos.VendingRepo
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
