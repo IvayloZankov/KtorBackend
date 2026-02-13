@@ -1,9 +1,9 @@
-package com.fosents.routes
+package com.fosents.routes.vending
 
 import com.fosents.data.VENDING_URL_GET_COINS
 import com.fosents.data.VENDING_URL_RESET_COINS
 import com.fosents.data.VENDING_URL_UPDATE_COINS
-import com.fosents.models.Coin
+import com.fosents.models.vending.Coin
 import com.fosents.repos.VendingRepo
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -11,7 +11,7 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Route.coins() {
+fun Route.setCoinsEndpoints() {
     get(VENDING_URL_GET_COINS) {
         call.respond(
             message = VendingRepo.getCoins(),

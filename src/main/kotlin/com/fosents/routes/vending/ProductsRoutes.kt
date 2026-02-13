@@ -1,4 +1,4 @@
-package com.fosents.routes
+package com.fosents.routes.vending
 
 import com.fosents.data.*
 import com.fosents.repos.VendingRepo
@@ -8,7 +8,7 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Route.products() {
+fun Route.setProductsEndpoints() {
     get(VENDING_URL_GET_PRODUCTS) {
         call.respond(
             message = VendingRepo.getProducts(),

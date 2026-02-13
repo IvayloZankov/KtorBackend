@@ -1,4 +1,4 @@
-package com.fosents.models
+package com.fosents.models.vending
 
 import kotlinx.serialization.Serializable
 

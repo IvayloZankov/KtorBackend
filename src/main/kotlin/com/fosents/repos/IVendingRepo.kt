@@ -1,8 +1,8 @@
 package com.fosents.repos
 
 import com.fosents.models.ApiResponse
-import com.fosents.models.Coin
-import com.fosents.models.Product
+import com.fosents.models.vending.Coin
+import com.fosents.models.vending.Product
 
 interface IVendingRepo {
 
