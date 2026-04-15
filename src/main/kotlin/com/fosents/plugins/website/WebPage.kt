@@ -32,19 +32,25 @@ private fun BODY.setIntro() {
     div("background") {
         div(classes = "row main intro") {
             id = "home"
-            div(classes = "column picture") {}
-            div(classes = "column") {
-                h1 {
-                    +"Hi there, I'm Ivaylo, a software developer"
+            div(classes = "column left intro-text") {
+                h1(classes = "intro") {
+                    +"Ivaylo Zankov"
+                }
+                h3(classes = "intro") {
+                    +"Senior Android Engineer"
+                }
+                h4 {
+                    +"6+ years of experience. Expert in Clean Architecture, Jetpack Compose & High-Security Banking Apps"
                 }
                 div(classes = "button") {
                     style = "text-align: center"
                     a(classes = "button") {
-                        href = "#contacts"
-                        +"Contact me"
+                        href = "#projects"
+                        +"View My Work"
                     }
                 }
             }
+            div(classes = "column left picture") {}
         }
     }
 }
@@ -54,10 +60,13 @@ private fun BODY.setInfoSection() {
         id = "info"
         div("inner scroll") { id = "about_me" }
         div("inner info") {
-            h2 { +"My Ktor website" }
+            h2 { +"Powered by Kotlin & Ktor" }
             p {
-                text("Welcome to my website developed on Kotlin Ktor. Here you can find information " +
-                        "about me, as well as the latest projects I'm developing.")
+                text("This portfolio is a live demonstration of a full-stack Kotlin ecosystem. " +
+                        "Built as a containerized microservice using Ktor, it functions as a centralized " +
+                        "engine managing synchronized system states and high-performance API contracts. By " +
+                        "leveraging Ktor’s non-blocking DSL and Kotlinx Serialization, the architecture ensures " +
+                        "efficient data exchange and scalable, production-ready deployment via Docker.")
             }
         }
     }

@@ -134,6 +134,10 @@ private fun CssBuilder.setMainStyle() {
         position = Position.relative
     }
     rule("div.main.intro") {
+        display = Display.flex
+        flexWrap = FlexWrap.wrap
+        alignItems = Align.center
+        justifyContent = JustifyContent.center
         padding = Padding(horizontal = 50.px)
     }
     rule("div.background") {
@@ -266,11 +270,14 @@ private fun CssBuilder.setIntroStyle() {
         backgroundRepeat = BackgroundRepeat.noRepeat
         backgroundPosition = RelativePosition.center
         backgroundSize = "cover"
-        height = 700.px
-        maxWidth = 700.px
+        height = 500.px
+        maxWidth = 500.px
+    }
+    rule("div.column.intro-text") {
+        padding = Padding(all = 20.px)
     }
     rule("h1.intro") {
-        paddingTop = 100.px
+        paddingTop = 0.px
         color = Color.black
         maxHeight = 999999.px
     }
@@ -287,7 +294,6 @@ private fun CssBuilder.setIntroStyle() {
         padding = Padding(vertical =16.px, horizontal = 32.px)
         textAlign = TextAlign.center
         transitionDuration = Time("0.4s")
-        fontFamily = "sans-serif"
         cursor = Cursor.pointer
         textDecoration = TextDecoration.none
     }
@@ -534,11 +540,17 @@ private fun CssBuilder.setMedia() {
             textAlign = TextAlign.center
             alignSelf = Align.center
         }
-        rule("div.column") {
-            width = LinearDimension("100%")
+        rule("div.main.intro") {
+            flexDirection = FlexDirection.columnReverse
         }
         rule("div.column.picture") {
-            maxWidth = 1080.px
+            margin = Margin(top = 50.px, bottom = 0.px, left = LinearDimension.auto, right = LinearDimension.auto)
+        }
+        rule("div.button") {
+            padding = Padding(vertical = 50.px)
+        }
+        rule("div.column") {
+            width = LinearDimension("100%")
         }
         rule("div.column.left.img") {
             width = LinearDimension("100%")
