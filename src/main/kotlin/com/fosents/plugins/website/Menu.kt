@@ -6,8 +6,8 @@ fun HTML.setMenu() {
     body {
         ul(classes = "menu") {
             setMenuItem("home", "#top")
-            setMenuItem("about me", "#about_me")
             setMenuItem("projects", "#projects")
+            setMenuItem("about me", "#about_me")
         }
     }
 }

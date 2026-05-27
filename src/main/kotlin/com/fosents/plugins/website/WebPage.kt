@@ -22,8 +22,8 @@ private fun HTML.setBody() {
         }
         setIntro()
         setInfoSection()
-        setAboutMeSection()
         setProjectsSection()
+        setAboutMeSection()
         setHobbiesSection()
     }
 }
@@ -58,15 +58,75 @@ private fun BODY.setIntro() {
 private fun BODY.setInfoSection() {
     div("main") {
         id = "info"
-        div("inner scroll") { id = "about_me" }
+        div("inner scroll") { id = "projects" }
         div("inner info") {
-            h2 { +"Powered by Kotlin & Ktor" }
+            h3 { +"Powered by Kotlin & Ktor" }
             p {
                 text("This portfolio is a live demonstration of a full-stack Kotlin ecosystem. " +
                         "Built as a containerized microservice using Ktor, it functions as a centralized " +
                         "engine managing synchronized system states and high-performance API contracts. By " +
                         "leveraging Ktor’s non-blocking DSL and Kotlinx Serialization, the architecture ensures " +
                         "efficient data exchange and scalable, production-ready deployment via Docker.")
+            }
+        }
+    }
+}
+
+private fun BODY.setProjectsSection() {
+    div("backgroundAccentSecondary") {
+        div("main") {
+            div("inner scroll") { id = "about_me" }
+            div("inner") {
+                div("row") {
+                    div("column left img") {
+                        div("projectsFrame") {
+                            img(classes = "wheelBig") {
+                                src = "wheel.svg"
+                            }
+                            img(classes = "wheelMedium") {
+                                src = "wheel.svg"
+                            }
+                            img(classes = "wheelSmall") {
+                                src = "wheel.svg"
+                            }
+                        }
+                    }
+                    div("column left text") {
+                        h2(classes = "gold") {
+                            +"Architectural Case Studies"
+                        }
+                    }
+                }
+            }
+            ul {
+                p("project") {
+                    text("Android applications demonstrating scalable development. " +
+                            "These projects are built following Clean Architecture principles and MVVM, " +
+                            "ensuring strict separation of concerns, high testability, and isolated Domain, " +
+                            "Data, and UI layers. UI state is managed via Unidirectional Data Flow (UDF) " +
+                            "using Jetpack Compose.")
+                }
+                project(
+                    imageClass = "vending",
+                    title = "Compose Vending Machine",
+                    about = "Modern Android application that simulates a real-world vending machine experience. " +
+                            "Built using Kotlin and Jetpack Compose, it demonstrates best practices in Android " +
+                            "development, including Clean Architecture, MVVM, and Dependency Injection.",
+                    link = URL_PROJECT_VENDING_KOTLIN,
+                    stack = "Kotlin | Jetpack Compose | Clean Architecture | MVVM | Hilt | Coroutines & Flow"
+                )
+                project(
+                    imageClass = "coding",
+                    title = "Unified Kotlin Microservice & API Engine",
+                    about = "A containerized, asynchronous backend microservice built with Ktor that functions as a " +
+                            "centralized data provider. It directly powers the RESTful APIs for the Vending Machine " +
+                            "application, managing synchronized system states. Utilizing a non-blocking routing " +
+                            "system with Ktor's DSL and Kotlinx Serialization, it guarantees high-performance " +
+                            "API contracts and efficient data exchange. Also, it operates as the server-side " +
+                            "rendering engine via Ktor HTML DSL.",
+                    link = URL_PROJECT_KTOR,
+                    stack = "Kotlin | Ktor & Netty | Kotlinx Serialization | Docker | RESTful API"
+                )
             }
         }
     }
@@ -152,7 +212,6 @@ private fun DIV.setCertificates() {
     div("inner") {
         secTitle("certs.svg", "My certs", "certs")
     }
-    div("inner scroll") { id = "projects" }
     div ("inner certs") {
         ul {
             cert("Android 14 App Development From Beginner to Advanced Developer", "Udemy")
@@ -185,58 +244,6 @@ private fun UL.cert(name: String, issuer: String) {
     li {
         h4 { +name }
         p { +issuer }
-    }
-}
-
-private fun BODY.setProjectsSection() {
-    div("backgroundAccentSecondary") {
-        div("main") {
-            div("inner") {
-                div("row") {
-                    div("column left img") {
-                        div("projectsFrame") {
-                            img(classes = "wheelBig") {
-                                src = "wheel.svg"
-                            }
-                            img(classes = "wheelMedium") {
-                                src = "wheel.svg"
-                            }
-                            img(classes = "wheelSmall") {
-                                src = "wheel.svg"
-                            }
-                        }
-                    }
-                    div("column left text") {
-                        h2(classes = "gold") {
-                            +"Working on"
-                        }
-                    }
-                }
-            }
-            ul {
-                project(
-                    "vending",
-                    "Compose VM",
-                    "Android vending machine implementation on Kotlin with Jetpack Compose, Hilt-Dagger, " +
-                            "Coroutines, Retrofit, Room, DataStore.",
-                    URL_PROJECT_VENDING_KOTLIN)
-                project(
-                    "weather",
-                    "ZaniWeather",
-                    "Android Java weather application with Hilt-Dagger, RxJava, Retrofit, MVVM, DataStore.",
-                    URL_PROJECT_WEATHER)
-                project(
-                    "vending",
-                    "Java VM",
-                    "Android vending machine implementation on Java with MVVM, LiveData, Retrofit, RxJava.",
-                    URL_PROJECT_VENDING_JAVA)
-                project(
-                    "coding",
-                    "Ktor backend",
-                    "Kotlin Ktor backend implementation for website and REST API for Android vending machine.",
-                    URL_PROJECT_KTOR)
-            }
-        }
     }
 }
 
@@ -277,15 +284,14 @@ private fun DIV.setHobbies() {
     div("inner")
 }
 
-private fun UL.project(imageClass: String, title: String, about: String, link: String, inProgress: Boolean = true) {
+private fun UL.project(imageClass: String, title: String, about: String, link: String, stack: String) {
     li {
         div {
             projectTitle(imageClass, title, link)
         }
         div ("project") {
             p("project") { +about }
-            if (inProgress)
-                p("progress") { +"in progress" }
+            p("stack") { +stack }
         }
     }
 }

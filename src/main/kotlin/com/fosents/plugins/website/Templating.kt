@@ -421,7 +421,7 @@ private fun CssBuilder.setProjectsStyle() {
     rule("p.project") {
         color = Color.whiteSmoke
     }
-    rule("p.progress") {
+    rule("p.stack") {
         fontSize = 20.px
         color = Color.whiteSmoke
     }
