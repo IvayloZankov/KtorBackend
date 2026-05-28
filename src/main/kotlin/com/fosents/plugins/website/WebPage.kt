@@ -1,6 +1,9 @@
 package com.fosents.plugins.website
 
 import com.fosents.data.*
+import com.fosents.plugins.website.div.DIV_INTRO_TEXT
+import com.fosents.plugins.website.div.DIV_SKILLS
+import com.fosents.plugins.website.div.DIV_TEXT
 import kotlinx.html.*
 
 fun HTML.initLandingPage() {
@@ -22,9 +25,8 @@ private fun HTML.setBody() {
         }
         setIntro()
         setInfoSection()
-        setAboutMeSection()
         setProjectsSection()
-        setHobbiesSection()
+        setAboutMeSection()
     }
 }
 
@@ -32,19 +34,25 @@ private fun BODY.setIntro() {
     div("background") {
         div(classes = "row main intro") {
             id = "home"
-            div(classes = "column picture") {}
-            div(classes = "column") {
-                h1 {
-                    +"Hi there, I'm Ivaylo, a software developer"
+            div(classes = "column left $DIV_INTRO_TEXT") {
+                h1(classes = "intro") {
+                    +"Ivaylo Zankov"
+                }
+                h3(classes = "intro") {
+                    +"Senior Android Engineer"
+                }
+                h4 {
+                    +"6+ years of experience. Expert in Clean Architecture, Jetpack Compose & High-Security Banking Apps"
                 }
                 div(classes = "button") {
                     style = "text-align: center"
                     a(classes = "button") {
-                        href = "#contacts"
-                        +"Contact me"
+                        href = "#projects"
+                        +"View My Work"
                     }
                 }
             }
+            div(classes = "column left picture") {}
         }
     }
 }
@@ -52,12 +60,75 @@ private fun BODY.setIntro() {
 private fun BODY.setInfoSection() {
     div("main") {
         id = "info"
-        div("inner scroll") { id = "about_me" }
+        div("inner scroll") { id = "projects" }
         div("inner info") {
-            h2 { +"My Ktor website" }
+            h3 { +"Powered by Kotlin & Ktor" }
             p {
-                text("Welcome to my website developed on Kotlin Ktor. Here you can find information " +
-                        "about me, as well as the latest projects I'm developing.")
+                text("This portfolio is a live demonstration of a full-stack Kotlin ecosystem. " +
+                        "Built as a containerized microservice using Ktor, it functions as a centralized " +
+                        "engine managing synchronized system states and high-performance API contracts. By " +
+                        "leveraging Ktor’s non-blocking DSL and Kotlinx Serialization, the architecture ensures " +
+                        "efficient data exchange and scalable, production-ready deployment via Docker.")
+            }
+        }
+    }
+}
+
+private fun BODY.setProjectsSection() {
+    div("backgroundAccentSecondary") {
+        div("main") {
+            div("inner scroll") { id = "mindset" }
+            div("inner") {
+                div("row") {
+                    div("column left img") {
+                        div("projectsFrame") {
+                            img(classes = "wheelBig") {
+                                src = "wheel.svg"
+                            }
+                            img(classes = "wheelMedium") {
+                                src = "wheel.svg"
+                            }
+                            img(classes = "wheelSmall") {
+                                src = "wheel.svg"
+                            }
+                        }
+                    }
+                    div("column left text") {
+                        h2(classes = "gold") {
+                            +"Architectural Case Studies"
+                        }
+                    }
+                }
+            }
+            ul {
+                p("project") {
+                    text("Android applications demonstrating scalable development. " +
+                            "These projects are built following Clean Architecture principles and MVVM, " +
+                            "ensuring strict separation of concerns, high testability, and isolated Domain, " +
+                            "Data, and UI layers. UI state is managed via Unidirectional Data Flow (UDF) " +
+                            "using Jetpack Compose.")
+                }
+                project(
+                    imageClass = "vending",
+                    title = "Compose Vending Machine",
+                    about = "Modern Android application that simulates a real-world vending machine experience. " +
+                            "Built using Kotlin and Jetpack Compose, it demonstrates best practices in Android " +
+                            "development, including Clean Architecture, MVVM, and Dependency Injection.",
+                    link = URL_PROJECT_VENDING_KOTLIN,
+                    stack = "Kotlin | Jetpack Compose | Clean Architecture | MVVM | Hilt | Coroutines & Flow"
+                )
+                project(
+                    imageClass = "coding",
+                    title = "Unified Kotlin Microservice & API Engine",
+                    about = "A containerized, asynchronous backend microservice built with Ktor that functions as a " +
+                            "centralized data provider. It directly powers the RESTful APIs for the Vending Machine " +
+                            "application, managing synchronized system states. Utilizing a non-blocking routing " +
+                            "system with Ktor's DSL and Kotlinx Serialization, it guarantees high-performance " +
+                            "API contracts and efficient data exchange. Also, it operates as the server-side " +
+                            "rendering engine via Ktor HTML DSL.",
+                    link = URL_PROJECT_KTOR,
+                    stack = "Kotlin | Ktor & Netty | Kotlinx Serialization | Docker | RESTful API"
+                )
             }
         }
     }
@@ -68,12 +139,12 @@ private fun BODY.setAboutMeSection() {
         setAboutMe()
     }
     div("backgroundAccent") {
-        div("main skills") {
+        div("main $DIV_SKILLS") {
             setSkills()
         }
     }
     div("main") {
-        setCertificates()
+        setProfessionalTraining()
     }
 }
 
@@ -85,20 +156,29 @@ private fun DIV.setAboutMe() {
                     src = "robot.svg"
                 }
             }
-            div("column left text") {
+            div("column left $DIV_TEXT") {
                 h2(classes = "accent") {
-                    +"About me"
+                    +"Engineering Mindset & Professional Journey"
                 }
             }
         }
-        p {
-            text("I'm a dedicated programmer always seeking the most advanced problem-solving solutions. " +
-                    "I'm experienced in Android development with Java and Kotlin, MVVM, RxJava, Kotlin Coroutines, " +
-                    "Retrofit, and I'm quite familiar with Ktor and automation UI testing.")
+        h3 {
+            +"The Drive for Quality & Automation"
         }
         p {
-            text("I love pushing my limits at challenges and enjoy working with skilled team mates solving " +
-                    "complex tasks. I'm a flexible learner and keen to further develop my career.")
+            text("My career in tech is built on relentless self-improvement and a proactive mindset. Starting in QA, I immediately recognized the bottlenecks of manual testing and took the initiative to build a robust automation framework from scratch. Driven by a desire to optimize processes, I spent countless hours outside of work teaching myself automation and architecture. This dedication not only significantly reduced manual workloads but naturally accelerated my transition into software engineering.")
+        }
+        h3 {
+            +"Architectural Ownership & Mentorship"
+        }
+        p {
+            text("Transitioning to an Android Developer role, I quickly developed a critical eye for structural flaws in legacy codebases. Instead of simply delivering features, I took ownership of the projects, initiating and leading full-scale application refactors to implement Clean Architecture and SOLID principles. I never stop learning, and I naturally gravitate toward sharing that knowledge with my peers. By driving the technical direction on new initiatives and enforcing Clean Code standards through collaborative code reviews, I actively guide fellow developers and help foster a team culture centered around modern best practices and maintainable code.")
+        }
+        h3 {
+            +"A Builder’s Philosophy"
+        }
+        p {
+            text("Beyond the screen, I am fundamentally a builder with a perfectionist streak. Whether I am constructing complex drywall frameworks, designing custom sensor-driven lighting systems, or executing complete room renovations, my approach is identical to my coding philosophy. I research deeply, execute with precision, and see every challenge through to the end. I firmly believe that investing intensive effort upfront—whether for a few weeks or months—creates robust solutions that provide lasting comfort and value for years to come. I build things to last, both in software and in life.")
         }
     }
     div("inner")
@@ -106,53 +186,47 @@ private fun DIV.setAboutMe() {
 
 private fun DIV.setSkills() {
     div("inner small") {
-        secTitle("skills.svg", "My skills", "accent")
+        secTitle("skills.svg", "My Tech Toolbox", "accent")
     }
-    div("row skills") {
-        div("column left skills") {
-            addSkill("Kotlin", 5)
-            addSkill("MVVM", 5)
-            addSkill("StateFlow", 4)
-            addSkill("Coroutines", 4)
-            addSkill("Retrofit", 4)
-        }
-        div("column left skills") {
-            addSkill("Java", 5)
-            addSkill("Android Studio", 5)
-            addSkill("Test Automation", 5)
-            addSkill("Appium", 4)
-            addSkill("Jetpack Compose", 3)
-        }
-    }
-}
-
-private fun DIV.addSkill(skill: String, level: Int) {
-    div("cellSkill") {
-        p("skills") { +skill }
-    }
-    div("cellSkill") {
-        div("row") {
-            for (i in 1..level) {
-                span("skillPoint")
+    div("row $DIV_SKILLS") {
+        div("column left $DIV_SKILLS") {
+            h4 {
+                +"Core Development"
             }
+            p{+"Architecture: Clean Architecture, MVVM, SOLID Principles, Clean Code, Dependency Injection (Hilt)."}
+            p{+"Modern Android (MAD): Jetpack Compose, Compose Navigation, Coroutines, Flow, WorkManager, Room."}
+        }
+        div("column left $DIV_SKILLS") {
+            h4 {
+                +"Quality & Tooling"
+            }
+            p{+"Testing & CI/CD: JUnit 4/5, Compose Test Rule, Integration Testing, Appium, Jenkins CI/CD."}
+            p{+"Languages & Backend: Kotlin, Kotlin DSL, Java, Ktor, Gradle 9."}
         }
     }
 }
 
-private fun DIV.setCertificates() {
+private fun DIV.setProfessionalTraining() {
     div("inner") {
-        secTitle("certs.svg", "My certs", "certs")
+        secTitle("certs.svg", "Professional Training & Deep Dives", "certs")
     }
-    div("inner scroll") { id = "projects" }
     div ("inner certs") {
         ul {
-            cert("Android 14 App Development From Beginner to Advanced Developer", "Udemy")
-            cert("Build Modern Android App with Ktor Server", "Udemy")
-            cert("Functional Programming with Java", "LinkedIn Learning")
-            cert("Building an Android App with Jetpack Libraries", "LinkedIn Learning")
-            cert("Advanced Java Programming", "LinkedIn Learning")
-            cert("Kotlin for Java Developers", "LinkedIn Learning")
-            cert("RxJava: Design Patterns for Android Developers", "LinkedIn Learning")
+            training(
+                title = "Advanced Kotlin Coroutines & Flow",
+                description = "Specialized focus on asynchronous programming, structured concurrency, " +
+                        "and reactive data streams for high-performance, non-blocking applications."
+            )
+            training(
+                title = "Modern Android Architecture & Kotlin",
+                description = "Advanced mastery of the Android SDK, emphasizing Jetpack library implementations, " +
+                        "lifecycle management, and scalable architectural patterns."
+            )
+            training(
+                title = "Advanced Java & Object-Oriented Design",
+                description = "Deep-level exploration of Java concepts and design patterns, essential for " +
+                        "maintaining, optimizing, and refactoring legacy systems within the Android ecosystem."
+            )
         }
     }
 }
@@ -172,111 +246,21 @@ private fun DIV.secTitle(image: String, text: String, textClass: String) {
     }
 }
 
-private fun UL.cert(name: String, issuer: String) {
+private fun UL.training(title: String, description: String) {
     li {
-        h4 { +name }
-        p { +issuer }
+        h4 { +title }
+        p { +description }
     }
 }
 
-private fun BODY.setProjectsSection() {
-    div("backgroundAccentSecondary") {
-        div("main") {
-            div("inner") {
-                div("row") {
-                    div("column left img") {
-                        div("projectsFrame") {
-                            img(classes = "wheelBig") {
-                                src = "wheel.svg"
-                            }
-                            img(classes = "wheelMedium") {
-                                src = "wheel.svg"
-                            }
-                            img(classes = "wheelSmall") {
-                                src = "wheel.svg"
-                            }
-                        }
-                    }
-                    div("column left text") {
-                        h2(classes = "gold") {
-                            +"Working on"
-                        }
-                    }
-                }
-            }
-            ul {
-                project(
-                    "vending",
-                    "Compose VM",
-                    "Android vending machine implementation on Kotlin with Jetpack Compose, Hilt-Dagger, " +
-                            "Coroutines, Retrofit, Room, DataStore.",
-                    URL_PROJECT_VENDING_KOTLIN)
-                project(
-                    "weather",
-                    "ZaniWeather",
-                    "Android Java weather application with Hilt-Dagger, RxJava, Retrofit, MVVM, DataStore.",
-                    URL_PROJECT_WEATHER)
-                project(
-                    "vending",
-                    "Java VM",
-                    "Android vending machine implementation on Java with MVVM, LiveData, Retrofit, RxJava.",
-                    URL_PROJECT_VENDING_JAVA)
-                project(
-                    "coding",
-                    "Ktor backend",
-                    "Kotlin Ktor backend implementation for website and REST API for Android vending machine.",
-                    URL_PROJECT_KTOR)
-            }
-        }
-    }
-}
-
-private fun BODY.setHobbiesSection() {
-    div("main") {
-        setHobbies()
-    }
-}
-
-private fun DIV.setHobbies() {
-    div("inner hobbies") {
-        div("row") {
-            div("column left img") {
-                img(classes = "title animHobby") {
-                    style = "transform-origin: center bottom"
-                    src = "tent.svg"
-                }
-            }
-            div("column left text") {
-                h2(classes = "accent") {
-                    +"Outdoors"
-                }
-            }
-        }
-        p {
-            text("I love spending time outdoors with my family and friends. I take every opportunity to go to the " +
-                    "wilderness and explore new places. For me being outdoors is one of the best experiences " +
-                    "where I get lost in nature and clear my mind.")
-        }
-        p {
-            text("And in a combination with another hobby of mine - cooking, it makes unforgettable moments. " +
-                    "I am fond of it, and I am always trying interesting new recipes.")
-        }
-        p {
-            text("I'm also an enduro mountain biker and I love ridding in the mountains, exploring new routes.")
-        }
-    }
-    div("inner")
-}
-
-private fun UL.project(imageClass: String, title: String, about: String, link: String, inProgress: Boolean = true) {
+private fun UL.project(imageClass: String, title: String, about: String, link: String, stack: String) {
     li {
         div {
             projectTitle(imageClass, title, link)
         }
         div ("project") {
             p("project") { +about }
-            if (inProgress)
-                p("progress") { +"in progress" }
+            p("stack") { +stack }
         }
     }
 }
