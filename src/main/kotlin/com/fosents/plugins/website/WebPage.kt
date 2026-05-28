@@ -162,14 +162,23 @@ private fun DIV.setAboutMe() {
                 }
             }
         }
-        p {
-            text("I'm a dedicated programmer always seeking the most advanced problem-solving solutions. " +
-                    "I'm experienced in Android development with Java and Kotlin, MVVM, RxJava, Kotlin Coroutines, " +
-                    "Retrofit, and I'm quite familiar with Ktor and automation UI testing.")
+        h3 {
+            +"The Drive for Quality & Automation"
         }
         p {
-            text("I love pushing my limits at challenges and enjoy working with skilled team mates solving " +
-                    "complex tasks. I'm a flexible learner and keen to further develop my career.")
+            text("My career in tech is built on relentless self-improvement and a proactive mindset. Starting in QA, I immediately recognized the bottlenecks of manual testing and took the initiative to build a robust automation framework from scratch. Driven by a desire to optimize processes, I spent countless hours outside of work teaching myself automation and architecture. This dedication not only significantly reduced manual workloads but naturally accelerated my transition into software engineering.")
+        }
+        h3 {
+            +"Architectural Ownership & Mentorship"
+        }
+        p {
+            text("Transitioning to an Android Developer role, I quickly developed a critical eye for structural flaws in legacy codebases. Instead of simply delivering features, I took ownership of the projects, initiating and leading full-scale application refactors to implement Clean Architecture and SOLID principles. I never stop learning, and I naturally gravitate toward sharing that knowledge with my peers. By driving the technical direction on new initiatives and enforcing Clean Code standards through collaborative code reviews, I actively guide fellow developers and help foster a team culture centered around modern best practices and maintainable code.")
+        }
+        h3 {
+            +"A Builder’s Philosophy"
+        }
+        p {
+            text("Beyond the screen, I am fundamentally a builder with a perfectionist streak. Whether I am constructing complex drywall frameworks, designing custom sensor-driven lighting systems, or executing complete room renovations, my approach is identical to my coding philosophy. I research deeply, execute with precision, and see every challenge through to the end. I firmly believe that investing intensive effort upfront—whether for a few weeks or months—creates robust solutions that provide lasting comfort and value for years to come. I build things to last, both in software and in life.")
         }
     }
     div("inner")
