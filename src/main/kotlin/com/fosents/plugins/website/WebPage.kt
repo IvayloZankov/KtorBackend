@@ -1,6 +1,9 @@
 package com.fosents.plugins.website
 
 import com.fosents.data.*
+import com.fosents.plugins.website.div.DIV_INTRO_TEXT
+import com.fosents.plugins.website.div.DIV_SKILLS
+import com.fosents.plugins.website.div.DIV_TEXT
 import kotlinx.html.*
 
 fun HTML.initLandingPage() {
@@ -24,7 +27,6 @@ private fun HTML.setBody() {
         setInfoSection()
         setProjectsSection()
         setAboutMeSection()
-        setHobbiesSection()
     }
 }
 
@@ -32,7 +34,7 @@ private fun BODY.setIntro() {
     div("background") {
         div(classes = "row main intro") {
             id = "home"
-            div(classes = "column left intro-text") {
+            div(classes = "column left $DIV_INTRO_TEXT") {
                 h1(classes = "intro") {
                     +"Ivaylo Zankov"
                 }
@@ -75,7 +77,7 @@ private fun BODY.setInfoSection() {
 private fun BODY.setProjectsSection() {
     div("backgroundAccentSecondary") {
         div("main") {
-            div("inner scroll") { id = "about_me" }
+            div("inner scroll") { id = "mindset" }
             div("inner") {
                 div("row") {
                     div("column left img") {
@@ -137,12 +139,12 @@ private fun BODY.setAboutMeSection() {
         setAboutMe()
     }
     div("backgroundAccent") {
-        div("main skills") {
+        div("main $DIV_SKILLS") {
             setSkills()
         }
     }
     div("main") {
-        setCertificates()
+        setProfessionalTraining()
     }
 }
 
@@ -154,9 +156,9 @@ private fun DIV.setAboutMe() {
                     src = "robot.svg"
                 }
             }
-            div("column left text") {
+            div("column left $DIV_TEXT") {
                 h2(classes = "accent") {
-                    +"About me"
+                    +"Engineering Mindset & Professional Journey"
                 }
             }
         }
@@ -175,52 +177,47 @@ private fun DIV.setAboutMe() {
 
 private fun DIV.setSkills() {
     div("inner small") {
-        secTitle("skills.svg", "My skills", "accent")
+        secTitle("skills.svg", "My Tech Toolbox", "accent")
     }
-    div("row skills") {
-        div("column left skills") {
-            addSkill("Kotlin", 5)
-            addSkill("MVVM", 5)
-            addSkill("StateFlow", 4)
-            addSkill("Coroutines", 4)
-            addSkill("Retrofit", 4)
-        }
-        div("column left skills") {
-            addSkill("Java", 5)
-            addSkill("Android Studio", 5)
-            addSkill("Test Automation", 5)
-            addSkill("Appium", 4)
-            addSkill("Jetpack Compose", 3)
-        }
-    }
-}
-
-private fun DIV.addSkill(skill: String, level: Int) {
-    div("cellSkill") {
-        p("skills") { +skill }
-    }
-    div("cellSkill") {
-        div("row") {
-            for (i in 1..level) {
-                span("skillPoint")
+    div("row $DIV_SKILLS") {
+        div("column left $DIV_SKILLS") {
+            h4 {
+                +"Core Development"
             }
+            p{+"Architecture: Clean Architecture, MVVM, SOLID Principles, Clean Code, Dependency Injection (Hilt)."}
+            p{+"Modern Android (MAD): Jetpack Compose, Compose Navigation, Coroutines, Flow, WorkManager, Room."}
+        }
+        div("column left $DIV_SKILLS") {
+            h4 {
+                +"Quality & Tooling"
+            }
+            p{+"Testing & CI/CD: JUnit 4/5, Compose Test Rule, Integration Testing, Appium, Jenkins CI/CD."}
+            p{+"Languages & Backend: Kotlin, Kotlin DSL, Java, Ktor, Gradle 9."}
         }
     }
 }
 
-private fun DIV.setCertificates() {
+private fun DIV.setProfessionalTraining() {
     div("inner") {
-        secTitle("certs.svg", "My certs", "certs")
+        secTitle("certs.svg", "Professional Training & Deep Dives", "certs")
     }
     div ("inner certs") {
         ul {
-            cert("Android 14 App Development From Beginner to Advanced Developer", "Udemy")
-            cert("Build Modern Android App with Ktor Server", "Udemy")
-            cert("Functional Programming with Java", "LinkedIn Learning")
-            cert("Building an Android App with Jetpack Libraries", "LinkedIn Learning")
-            cert("Advanced Java Programming", "LinkedIn Learning")
-            cert("Kotlin for Java Developers", "LinkedIn Learning")
-            cert("RxJava: Design Patterns for Android Developers", "LinkedIn Learning")
+            training(
+                title = "Advanced Kotlin Coroutines & Flow",
+                description = "Specialized focus on asynchronous programming, structured concurrency, " +
+                        "and reactive data streams for high-performance, non-blocking applications."
+            )
+            training(
+                title = "Modern Android Architecture & Kotlin",
+                description = "Advanced mastery of the Android SDK, emphasizing Jetpack library implementations, " +
+                        "lifecycle management, and scalable architectural patterns."
+            )
+            training(
+                title = "Advanced Java & Object-Oriented Design",
+                description = "Deep-level exploration of Java concepts and design patterns, essential for " +
+                        "maintaining, optimizing, and refactoring legacy systems within the Android ecosystem."
+            )
         }
     }
 }
@@ -240,48 +237,11 @@ private fun DIV.secTitle(image: String, text: String, textClass: String) {
     }
 }
 
-private fun UL.cert(name: String, issuer: String) {
+private fun UL.training(title: String, description: String) {
     li {
-        h4 { +name }
-        p { +issuer }
+        h4 { +title }
+        p { +description }
     }
-}
-
-private fun BODY.setHobbiesSection() {
-    div("main") {
-        setHobbies()
-    }
-}
-
-private fun DIV.setHobbies() {
-    div("inner hobbies") {
-        div("row") {
-            div("column left img") {
-                img(classes = "title animHobby") {
-                    style = "transform-origin: center bottom"
-                    src = "tent.svg"
-                }
-            }
-            div("column left text") {
-                h2(classes = "accent") {
-                    +"Outdoors"
-                }
-            }
-        }
-        p {
-            text("I love spending time outdoors with my family and friends. I take every opportunity to go to the " +
-                    "wilderness and explore new places. For me being outdoors is one of the best experiences " +
-                    "where I get lost in nature and clear my mind.")
-        }
-        p {
-            text("And in a combination with another hobby of mine - cooking, it makes unforgettable moments. " +
-                    "I am fond of it, and I am always trying interesting new recipes.")
-        }
-        p {
-            text("I'm also an enduro mountain biker and I love ridding in the mountains, exploring new routes.")
-        }
-    }
-    div("inner")
 }
 
 private fun UL.project(imageClass: String, title: String, about: String, link: String, stack: String) {

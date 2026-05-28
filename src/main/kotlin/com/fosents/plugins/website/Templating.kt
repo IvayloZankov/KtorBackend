@@ -1,6 +1,9 @@
 package com.fosents.plugins.website
 
 import com.fosents.data.*
+import com.fosents.plugins.website.div.DIV_INTRO_TEXT
+import com.fosents.plugins.website.div.DIV_SKILLS
+import com.fosents.plugins.website.div.DIV_TEXT
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
@@ -90,7 +93,7 @@ private fun CssBuilder.setMainStyle() {
         maxHeight = 999999.px
     }
     h2 {
-        fontSize = 60.px
+        fontSize = 50.px
         cursor = Cursor.default
         color = COLOR_FONT_MAIN
         maxHeight = 999999.px
@@ -192,8 +195,8 @@ private fun CssBuilder.setMainStyle() {
         padding = Padding(all = 0.px)
 //        border = "1px solid red"
     }
-    rule("div.column.left.text") {
-        height = 200.px
+    rule("div.column.left.$DIV_TEXT") {
+//        height = 200.px
         padding = Padding(all = 0.px)
         position = Position.relative
         display = Display.flex
@@ -202,7 +205,7 @@ private fun CssBuilder.setMainStyle() {
         height = 100.px
         width = 100.px
     }
-    rule("div.column.left.text.small") {
+    rule("div.column.left.$DIV_TEXT.small") {
         height = 100.px
     }
     rule("div.columnImgSmall") {
@@ -273,7 +276,7 @@ private fun CssBuilder.setIntroStyle() {
         height = 500.px
         maxWidth = 500.px
     }
-    rule("div.column.intro-text") {
+    rule("div.column.$DIV_INTRO_TEXT") {
         padding = Padding(all = 20.px)
     }
     rule("h1.intro") {
@@ -318,20 +321,20 @@ private fun CssBuilder.setAboutMeStyle() {
         position = Position.relative
         padding = Padding(all = 50.px)
     }
-    rule("div.main.skills") {
+    rule("div.main.$DIV_SKILLS") {
         paddingBottom = 20.px
     }
-    rule("div.row.skills") {
+    rule("div.row.$DIV_SKILLS") {
         paddingBottom = 50.px
     }
-    rule("div.column.left.skills") {
+    rule("div.column.left.$DIV_SKILLS") {
         padding = Padding(all = 0.px)
         paddingLeft = 100.px
         color = Color.whiteSmoke
     }
     rule("div.cellSkill") {
         float = Float.left
-        width = LinearDimension("50%")
+        width = LinearDimension("100%")
         boxSizing = BoxSizing.borderBox
         color = Color.whiteSmoke
         display = Display.flex
@@ -349,12 +352,12 @@ private fun CssBuilder.setAboutMeStyle() {
         backgroundColor = Color.whiteSmoke
         marginLeft = 6.px
     }
-    rule("p.skills") {
+    rule("p.$DIV_SKILLS") {
         marginTop = 0.5.em
         marginBottom = 0.5.em
         fontWeight = FontWeight.bold
     }
-    rule("ul.skills") {
+    rule("ul.$DIV_SKILLS") {
         marginTop = 0.px
         border = Border(1.px, BorderStyle.solid, Color.red)
     }
